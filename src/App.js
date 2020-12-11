@@ -1,10 +1,21 @@
+import { useState, useEffect } from 'react';
+import { CardsContainer } from './components/CardsContainer';
+import { fetchCharacters } from './lib/api';
 import './App.css';
 
 function App()
 {
+	const [ characters, setCharacters ] = useState( [] );
+
+	useEffect( () => {
+		
+		fetchCharacters().then( res => setCharacters( res.data.results ) );
+
+	}, [] );
+
 	return (
 		<div className="App">
-			<h1>It Works!</h1>
+			<CardsContainer characters={ characters } />
 		</div>
 	);
 }
