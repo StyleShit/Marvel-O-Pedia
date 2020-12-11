@@ -8,7 +8,7 @@ function CardsContainer({ characters })
         <div className="cards-container">
             {
                 characters.map( character => {
-                    return <Card character={ character } />
+                    return <Card key={ character.id } character={ character } />
                 })
             }
         </div>
