@@ -1,0 +1,28 @@
+@import url( 'https://fonts.googleapis.com/css2?family=Bangers&display=swap' );
+
+*,
+*::before,
+*::after
+{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body
+{
+    --marvel-red: #e23636;
+    --marvel-black: #000;
+    --marvel-gray: #504a4a;
+
+	background-color: #504a4a;
+    font-family: Bangers;
+    color: #FFF;
+    text-shadow: 0 0 1px #000, 
+                1px 1px 1px #000, 
+                2px 2px 1px #000, 
+                3px 3px 1px #000, 
+                4px 4px 1px #000, 
+                5px 5px 1px #000, 
+                0 0 20px #000;
+}
