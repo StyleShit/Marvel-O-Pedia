@@ -1,0 +1,19 @@
+.loader
+{
+    display: table;
+    margin: 2rem auto;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 100%;
+    border: 3px solid var( --marvel-red );
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    animation: .5s spin linear infinite;
+}
+
+
+@keyframes spin
+{
+    from { transform: rotate( 0deg ); }
+    to { transform: rotate( 360deg ); }
+}
