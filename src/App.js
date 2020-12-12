@@ -1,21 +1,75 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { CardsContainer } from './components/CardsContainer';
+import { Loader } from './components/Loader';
 import { fetchCharacters } from './lib/api';
 import './App.css';
 
 function App()
 {
+	const loaderRef = useRef( null );
 	const [ characters, setCharacters ] = useState( [] );
+	const [ limit ] = useState( 40 );
+	const [ offset, setOffset ] = useState( -limit );
 
+
+	// init observer on mount
 	useEffect( () => {
 		
-		fetchCharacters().then( res => setCharacters( res.data.results ) );
+		const options = {
 
+			root: null,
+			rootMargin: '0px',
+			treshold: .5
+
+		};
+
+		const observer = new IntersectionObserver( handleInfiniteScroll, options );
+
+		if( loaderRef.current )
+		{
+			observer.observe( loaderRef.current );
+		}
+
+	// eslint-disable-next-line
 	}, [] );
+
+
+	// load more characters to the page
+	useEffect( () => {
+
+		// TODO: find a better solution...
+		if( offset < 0 )
+		{
+			return;
+		}
+
+		fetchCharacters( limit, offset ).then( res => {
+
+			setCharacters( prev => [ ...prev, ...res.data.results ] );
+
+		});
+		
+	// eslint-disable-next-line
+	}, [ offset ] );
+
+
+	// change offset on scroll
+	const handleInfiniteScroll = ( entries ) => {
+
+		const loader = entries[0];
+
+		if( loader.isIntersecting )
+		{
+			setOffset( prev => prev + limit );
+		}
+
+	}
+
 
 	return (
 		<div className="App">
 			<CardsContainer characters={ characters } />
+			<Loader loaderRef={ loaderRef } />
 		</div>
 	);
 }

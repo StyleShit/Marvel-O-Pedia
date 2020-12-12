@@ -1,10 +1,10 @@
 import React from 'react';
 import './Loader.css';
 
-function Loader()
+function Loader({ loaderRef })
 {
     return (
-        <div className="loader"></div>
+        <div className="loader" ref={ loaderRef }></div>
     )
 }
 
