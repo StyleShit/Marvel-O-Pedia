@@ -14,7 +14,7 @@
 	clip-path: var( --clip-initial );
 	padding: 10px;
     padding-bottom: 7px;
-    will-change: clip-path, background-color;
+    will-change: clip-path;
 	transition: .3s all;
 }
 
@@ -41,7 +41,6 @@
 	height: 100%;
 	z-index: 5;
     opacity: 0;
-    will-change: opacity;
 	transition: .3s all ease-out;
 }
 
@@ -60,7 +59,6 @@
 	left: 0;
 	bottom: 30px;
     font-size: 50px;
-    will-change: opacity, transform;
 	transition: .3s all;
 }
 
