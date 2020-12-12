@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { CardsContainer } from './components/CardsContainer';
 import { Loader } from './components/Loader';
+import { Title } from './components/Title';
 import { fetchCharacters } from './lib/api';
 import './App.css';
 
@@ -68,8 +69,13 @@ function App()
 
 	return (
 		<div className="App">
+			
+			<Title>
+				<span>MARVEL</span>-O-Pedia
+			</Title>
 			<CardsContainer characters={ characters } />
 			<Loader loaderRef={ loaderRef } />
+			
 		</div>
 	);
 }
