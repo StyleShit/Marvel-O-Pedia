@@ -2,8 +2,8 @@
 {
     background-color: var( --marvel-red );
     color: #FFF;
-    font-size: 3rem;
-    padding: .5rem 1rem;
+    font-size: 10vmin;
+    padding: .5vmin 2vmin;
     display: table;
     margin: 3rem auto 4rem;
     font-family: Roboto;
