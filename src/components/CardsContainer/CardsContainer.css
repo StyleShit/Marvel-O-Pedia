@@ -1,6 +1,6 @@
 .cards-container
 {
-    --gap: 2rem;
+    --gap: 2vmin;
     display: flex;
 	align-items: center;
     justify-content: space-evenly;
@@ -11,5 +11,5 @@
 
 .cards-container > *
 {
-    flex: 1 1 300px;
+    flex: 1 1 45%;
 }

@@ -30,9 +30,9 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 0 3rem;
+	padding: 0 3vmin;
 	color: #FFF;
-	font-size: 1.3rem;
+	font-size: 3vmin;
 	background-color: rgba( 0,0,0,.8 );
 	left: 0;
 	top: 0;
@@ -58,7 +58,7 @@
 	text-align: center;
 	left: 0;
 	bottom: 30px;
-    font-size: 50px;
+    font-size: 6vmin;
 	transition: .3s all;
 }
 
